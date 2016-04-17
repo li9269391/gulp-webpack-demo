@@ -50,7 +50,7 @@ gulp.task('lessmin', function (done) {
 
 //将js加上10位md5,并修改html中的引用路径，该动作依赖build-js
 gulp.task('md5:js', ['build-js'], function (done) {
-    gulp.src('dist/js/*.js')
+    gulp.src('src/js/*.js')
         .pipe(md5(10, 'dist/app/*.html'))
         .pipe(gulp.dest('dist/js'))
         .on('end', done);
@@ -58,7 +58,7 @@ gulp.task('md5:js', ['build-js'], function (done) {
 
 //将css加上10位md5，并修改html中的引用路径，该动作依赖sprite
 gulp.task('md5:css', ['sprite'], function (done) {
-    gulp.src('dist/css/*.css')
+    gulp.src('src/css/*.css')
         .pipe(md5(10, 'dist/app/*.html'))
         .pipe(gulp.dest('dist/css'))
         .on('end', done);
